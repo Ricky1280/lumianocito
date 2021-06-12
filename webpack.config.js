@@ -1,149 +1,172 @@
-const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const path = require('path');
+// Copyright 2018 Google LLC.
+// SPDX-License-Identifier: Apache-2.0
+
+const path = require("path");
+
+const webpack = require("webpack");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+var BrotliPlugin = require('brotli-webpack-plugin');
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const htmlLoader = require("html-loader");
 
 module.exports = {
-  mode: "production", // "production" | "development" | "none"
-  // Chosen mode tells webpack to use its built-in optimizations accordingly.
-  entry: "./app/entry", // string | object | array
-  // defaults to ./src
-  // Here the application starts executing
-  // and webpack starts bundling
+  entry: {
+    apparchive: './public/archive.html'
+  },
   output: {
-    // options related to how webpack emits results
-    path: path.resolve(__dirname, "dist"), // string
-    // the target directory for all output files
-    // must be an absolute path (use the Node.js path module)
-    filename: "bundle.js", // string
-    // the filename template for entry chunks
-    publicPath: "/assets/", // string
-    // the url to the output directory resolved relative to the HTML page
-    library: "MyLibrary", // string,
-    // the name of the exported library
-    libraryTarget: "umd", // universal module definition
-    // the type of the exported library
-    /* Advanced output configuration (click to show) */
-    /* Expert output configuration (on own risk) */
+    filename: '[name]',
+    path: path.resolve(__dirname, 'public')
   },
+
   module: {
-    // configuration regarding modules
-    rules: [
-      // rules for modules (configure loaders, parser options, etc.)
-      {
-        test: /\.jsx?$/,
-        include: [
-          path.resolve(__dirname, "app")
-        ],
-        exclude: [
-          path.resolve(__dirname, "app/demo-files")
-        ],
-        // these are matching conditions, each accepting a regular expression or string
-        // test and include have the same behavior, both must be matched
-        // exclude must not be matched (takes preferrence over test and include)
-        // Best practices:
-        // - Use RegExp only in test and for filename matching
-        // - Use arrays of absolute paths in include and exclude
-        // - Try to avoid exclude and prefer include
-        issuer: { test, include, exclude },
-        // conditions for the issuer (the origin of the import)
-        enforce: "pre",
-        enforce: "post",
-        // flags to apply these rules, even if they are overridden (advanced option)
-        loader: "babel-loader",
-        // the loader which should be applied, it'll be resolved relative to the context
-        options: {
-          presets: ["es2015"]
-        },
-        // options for the loader
-      },
-      {
-        test: /\.html$/,
-        use: [
-          // apply multiple loaders and options
-          "htmllint-loader",
-          {
-            loader: "html-loader",
-            options: {
-              / ... /
-            }
-          }
-        ]
-      },
-      { oneOf: [ / rules / ] },
-      // only use one of these nested rules
-      { rules: [ / rules / ] },
-      // use all of these nested rules (combine with conditions to be useful)
-      { resource: { and: [ / conditions / ] } },
-      // matches only if all conditions are matched
-      { resource: { or: [ / conditions / ] } },
-      { resource: [ / conditions / ] },
-      // matches if any condition is matched (default for arrays)
-      { resource: { not: / condition / } }
-      // matches if the condition is not matched
-    ],
-    /* Advanced module configuration (click to show) */
+    rules: [{
+      test: /\.html$/, // include .html files
+      exclude: /node_modules/, // exclude any and all files in the node_modules folder
+      use: [{
+        loader: "html-loader"
+      }]
+    }]
   },
-  resolve: {
-    // options for resolving module requests
-    // (does not apply to resolving to loaders)
-    modules: [
-      "node_modules",
-      path.resolve(__dirname, "app")
-    ],
-    // directories where to look for modules
-    extensions: [".js", ".json", ".jsx", ".css"],
-    // extensions that are used
-    alias: {
-      // a list of module name aliases
-      "module": "new-module",
-      // alias "module" -> "new-module" and "module/path/file" -> "new-module/path/file"
-      "only-module$": "new-module",
-      // alias "only-module" -> "new-module", but not "only-module/path/file" -> "new-module/path/file"
-      "module": path.resolve(__dirname, "app/third/module.js"),
-      // alias "module" -> "./app/third/module.js" and "module/file" results in error
-      // modules aliases are imported relative to the current context
-    },
-    /* Alternative alias syntax (click to show) */
-    /* Advanced resolve configuration (click to show) */
-  },
-  performance: {
-    hints: "warning", // enum
-    maxAssetSize: 200000, // int (in bytes),
-    maxEntrypointSize: 400000, // int (in bytes)
-    assetFilter: function(assetFilename) {
-      // Function predicate that provides asset filenames
-      return assetFilename.endsWith('.css') || assetFilename.endsWith('.js');
-    }
-  },
-  devtool: "source-map", // enum
-  // enhance debugging by adding meta info for the browser devtools
-  // source-map most detailed at the expense of build speed.
-  context: __dirname, // string (absolute path!)
-  // the home directory for webpack
-  // the entry and module.rules.loader option
-  //   is resolved relative to this directory
-  target: "web", // enum
-  // the environment in which the bundle should run
-  // changes chunk loading behavior and available modules
-  externals: ["react", /^@angular/],
-  // Don't follow/bundle these modules, but request them at runtime from the environment
-  stats: "errors-only",
-  // lets you precisely control what bundle information gets displayed
-  devServer: {
-    proxy: { // proxy URLs to backend development server
-      '/api': 'http://localhost:3000'
-    },
-    contentBase: path.join(__dirname, 'public'), // boolean | string | array, static file location
-    compress: true, // enable gzip compression
-    historyApiFallback: true, // true for index.html upon 404, object for multiple paths
-    hot: true, // hot module replacement. Depends on HotModuleReplacementPlugin
-    https: false, // true for self-signed, object for cert authority
-    noInfo: true, // only errors & warns on hot reload
-    // ...
-  },
-   plugins: [
-    new HtmlWebpackPlugin({template: "./src/index.html"}),
+    plugins: [   
+    new HtmlWebpackPlugin({
+      template: './views/index.html',
+      inject: false,
+      chunks: ['index'],
+      filename: './views/index.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: './public/archive.html',
+      inject: false,
+      chunks: ['archive'],
+      filename: './public/archive.html'
+    }),
+          new HtmlWebpackPlugin({
+            template: './public/diary.html',
+      inject: false,
+      chunks: ['diary'],
+      filename: './public/diary.html'
+    }),
+          new HtmlWebpackPlugin({
+            template: './public/exhibitions.html',
+      inject: false,
+      chunks: ['exhibitions'],
+      filename: './public/exhibitions.html'
+    }),
+          new HtmlWebpackPlugin({
+            template: './public/exhibitions_old.html',
+      inject: false,
+      chunks: ['exhibitions_old'],
+      filename: './public/exhibitions_old.html'
+    }),
+          new HtmlWebpackPlugin({
+            template: './public/fashion.html',
+      inject: false,
+      chunks: ['fashion'],
+      filename: './public/fashion.html'
+    }),
+          new HtmlWebpackPlugin({
+            template: './public/graphicdesign.html',
+      inject: false,
+      chunks: ['graphicdesign'],
+      filename: './public/graphicdesign.html'
+    }),
+          new HtmlWebpackPlugin({
+            template: './public/info.html',
+      inject: false,
+      chunks: ['info'],
+      filename: './public/info.html'
+    }),
+          new HtmlWebpackPlugin({
+            template: './public/mixedmedia.html',
+      inject: false,
+      chunks: ['mixedmedia'],
+      filename: './public/mixedmedia.html'
+    }),
+          new HtmlWebpackPlugin({
+            template: './public/othermediums.html',
+      inject: false,
+      chunks: ['othermediums'],
+      filename: './public/othermediums.html'
+    }),
+          new HtmlWebpackPlugin({
+            template: './public/performance.html',
+      inject: false,
+      chunks: ['performance'],
+      filename: './public/performance.html'
+    }),
+          new HtmlWebpackPlugin({
+            template: './public/personal.html',
+      inject: false,
+      chunks: ['personal'],
+      filename: './public/personal.html'
+    }),
+          new HtmlWebpackPlugin({
+            template: './public/photography.html',
+      inject: false,
+      chunks: ['photography'],
+      filename: './public/photography.html'
+    }),
+          new HtmlWebpackPlugin({
+            template: './public/portfolioarchive.html',
+      inject: false,
+      chunks: ['portfolioarchive'],
+      filename: './public/portfolioarchive.html'
+    }),
+          new HtmlWebpackPlugin({
+            template: './public/press.html',
+      inject: false,
+      chunks: ['press'],
+      filename: './public/press.html'
+    }),
+          new HtmlWebpackPlugin({
+            template: './public/sculpture.html',
+      inject: false,
+      chunks: ['sculpture'],
+      filename: './public/sculpture.html'
+    }),
+      
+          new HtmlWebpackPlugin({
+            template: './public/smallindex.html',
+      inject: false,
+      chunks: ['smallindex'],
+      filename: './public/smallindex.html'
+    }),
+          new HtmlWebpackPlugin({
+            template: './public/tests-for-img.html',
+      inject: false,
+      chunks: ['tests-for-img'],
+      filename: './public/tests-for-img.html'
+    }),
+          new HtmlWebpackPlugin({
+            template: './public/unseen.html',
+      inject: false,
+      chunks: ['unseen'],
+      filename: './public/unseen.html'
+    }),
+          new HtmlWebpackPlugin({
+            template: './public/videoprojects.html',
+      inject: false,
+      chunks: ['videoprojects'],
+      filename: './public/videoprojects.html'
+    }),
+      new HtmlWebpackPlugin({
+        template: './public/when-in-harlem.html',
+      inject: false,
+      chunks: ['when-in-harlem'],
+      filename: './public/when-in-harlem.html'
+    }),
+         new HtmlWebpackPlugin({
+        template: './public/fashion2020.html',
+      inject: false,
+      chunks: ['fashion2020'],
+      filename: './public/fashion2020.html'
+    }),
     new MiniCssExtractPlugin({filename: "[name].css"}),
-    new FixStyleOnlyEntriesPlugin(),
-    new OptimizeCSSAssetsPlugin({})
+    new BrotliPlugin({
+      asset: '[file].br',
+      test: /\.js|css|html$/,
+    })
   ]
-  //
+};
+
+

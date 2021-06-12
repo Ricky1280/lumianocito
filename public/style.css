@@ -144,6 +144,9 @@
   box-sizing: border-box;
 } */
 
+
+
+
 body {
   font-family: onemedium;
   line-height: 1.5em;
@@ -1047,6 +1050,10 @@ background-color: white;
 }
 
 .interviewpress{
+    transition: background-color 1s;
+}
+
+.graphicdesignpress{
     transition: background-color 1s;
 }
 

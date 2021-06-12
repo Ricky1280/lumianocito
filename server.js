@@ -1,42 +1,41 @@
-// // server.js
-// // where your node app starts
+// Copyright 2018 Google LLC.
+// SPDX-License-Identifier: Apache-2.0
 
-console.log('rad');
+var express = require('express');
+var app = express();
 
-// we've started you off with Express (https://expressjs.com/)
-// but feel free to use whatever libraries or frameworks you'd like through `package.json`.
-// var shrinkRay = require('shrink-ray');
-var express = require("express");
-
-
-const app = express();
-
-// // our default array of dreams
-// const dreams = [
-//   "Find and count some sheep",
-//   "Climb a really tall mountain",
-//   "Wash the dishes"
-// ];
-
-// make all the files in 'public' available
-// https://expressjs.com/en/starter/static-files.html
-app.use(express.static("public"));
-// app.use(shrinkRay());
-
-// https://expressjs.com/en/starter/basic-routing.html
-
-app.get("/", (request, response) => {
-  response.sendFile(__dirname + "/views/index.html");
+app.get("/", (req, res) => {
+      if (req.header('Accept-Encoding').includes('br')) {
+      console.log("you can do it tho")
+  req.url = req.url + '.br';
+  res.set('Content-Encoding', 'br');
+  res.set('Content-Type', 'text/html; charset=UTF-8');
+  res.sendFile(__dirname + "/public/views/index.html.br");
+    } else {
+  res.sendFile(__dirname + "/views/index.html");
+    }
 });
 
-// // send the default array of dreams to the webpage
-// app.get("/dreams", (request, response) => {
-//   // express helps us take JS objects and send them as JSON
-//   response.json(dreams);
-// });
+app.get("/public/indexstyles.css", (req, res) => {
+  res.sendFile(__dirname + "/public/indexstyles.css");
+    }
+);
 
-// listen for requests :)
+app.get('*.html', (req, res) => {
+    if (req.header('Accept-Encoding').includes('br')) {
+  req.url = __dirname + "/public/public" + req.url + '.br';
+  res.set('Content-Encoding', 'br');
+  res.set('Content-Type', 'text/html; charset=UTF-8');
+  res.sendFile(req.url);
+    } else {
+      req.url = __dirname + "/public" + req.url
+      res.sendFile(req.url);
+    }
+});
 
-const listener = app.listen(process.env.PORT, () => {
-  console.log("Your app is listening on port " + listener.address().port);
+
+app.use(express.static('public'));
+
+var listener = app.listen(process.env.PORT, function() {
+  console.log('Your app is listening on port ' + listener.address().port);
 });
