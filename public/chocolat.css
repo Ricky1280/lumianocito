@@ -139,14 +139,17 @@
   cursor:none;
 }
 .chocolat-wrapper .chocolat-close {
-    width: 50px;
-    height: 50px;
+     width: 90px;
+    height: 90px;
+    margin-top: 50px;
+    /* margin-right: 20px; */
     cursor: pointer;
     position: absolute;
     top: 0;
     right: 0;
-    background: url(/type-20.svg) 50% 50% no-repeat;
-  cursor:none;
+    background-size: 90px 90px!IMPORTANT;
+    background: url(/type-20.svg) no-repeat;
+    cursor: none;
 }
 .chocolat-wrapper .chocolat-bottom {
     height: 40px;

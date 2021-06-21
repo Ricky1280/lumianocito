@@ -1,0 +1,12 @@
+dependencies:
+  net: 1.0.2
+packages:
+  /net/1.0.2:
+    dev: false
+    resolution:
+      integrity: sha1-0XV+yaf7I3HYPPR1XOPifhCCk4g=
+registry: 'https://registry.npmjs.org/'
+shrinkwrapMinorVersion: 9
+shrinkwrapVersion: 3
+specifiers:
+  net: ^1.0.2
