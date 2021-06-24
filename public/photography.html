@@ -90,11 +90,13 @@
         document.getElementById("om3").style.animation = "none 0s forwards"
         document.getElementById("om4").style.animation = "none 0s forwards"
         document.getElementById("om5").style.animation = "none 0s forwards"
+        document.getElementById("om6").style.animation = "none 0s forwards"
         document.getElementById("om1").style.filter = "blur(0px)"
         document.getElementById("om2").style.filter = "blur(0px)"
         document.getElementById("om3").style.filter = "blur(0px)"
         document.getElementById("om4").style.filter = "blur(0px)"
         document.getElementById("om5").style.filter = "blur(0px)"
+        document.getElementById("om6").style.filter = "blur(0px)"
           
        var othermediumslabel = document.getElementsByClassName("othermediumslabel");
        for(var i = 0; i < othermediumslabel.length; i++) {
@@ -114,11 +116,13 @@
         document.getElementById("om3").style.filter = "blur(40px)"
         document.getElementById("om4").style.filter = "blur(40px)"
         document.getElementById("om5").style.filter = "blur(40px)"
+        document.getElementById("om6").style.filter = "blur(40px)"
         document.getElementById("om1").style.animation = "blurfilterstart 1.5s forwards"
         document.getElementById("om2").style.animation = "blurfilterstart 1.5s forwards"
         document.getElementById("om3").style.animation = "blurfilterstart 1.5s forwards"
         document.getElementById("om4").style.animation = "blurfilterstart 1.5s forwards"
         document.getElementById("om5").style.animation = "blurfilterstart 1.5s forwards"
+        document.getElementById("om6").style.animation = "blurfilterstart 1.5s forwards"
 
           
        var othermediumslabel1 = document.getElementsByClassName("othermediumslabel");
@@ -366,6 +370,7 @@
            document.getElementById("newothermediumscontainer").children[3].style.opacity="";
            document.getElementById("newothermediumscontainer").children[4].style.opacity="";
            document.getElementById("newothermediumscontainer").children[5].style.opacity="";
+           document.getElementById("newothermediumscontainer").children[6].style.opacity="";
                     
                     setTimeout(function(){ 
                       if (othermediums === false){
@@ -374,7 +379,9 @@
            document.getElementById("newothermediumscontainer").children[2].style.display="none";
            document.getElementById("newothermediumscontainer").children[3].style.display="none";
            document.getElementById("newothermediumscontainer").children[4].style.display="none";
-           document.getElementById("newothermediumscontainer").children[5].style.display="none";} else{}
+           document.getElementById("newothermediumscontainer").children[5].style.display="none";
+           document.getElementById("newothermediumscontainer").children[6].style.display="none";
+           } else{}
                       }, 500, othermediums);
            }
            
@@ -397,6 +404,7 @@
            document.getElementById("newothermediumscontainer").children[3].style.opacity="";
            document.getElementById("newothermediumscontainer").children[4].style.opacity="";
            document.getElementById("newothermediumscontainer").children[5].style.opacity="";
+           document.getElementById("newothermediumscontainer").children[6].style.opacity="";
                     
                     setTimeout(function(){ 
            document.getElementById("newothermediumscontainer").children[0].style.display="none";
@@ -405,6 +413,7 @@
            document.getElementById("newothermediumscontainer").children[3].style.display="none";
            document.getElementById("newothermediumscontainer").children[4].style.display="none";
            document.getElementById("newothermediumscontainer").children[5].style.display="none";
+           document.getElementById("newothermediumscontainer").children[6].style.display="none";
                       }, 500);
            
          } else {
@@ -420,6 +429,7 @@
            document.getElementById("newothermediumscontainer").children[3].style.display="block";
            document.getElementById("newothermediumscontainer").children[4].style.display="block";
            document.getElementById("newothermediumscontainer").children[5].style.display="block";
+           document.getElementById("newothermediumscontainer").children[6].style.display="block";
            
             setTimeout(function(){ 
            document.getElementById("newothermediumscontainer").children[0].style.opacity="100";
@@ -428,6 +438,7 @@
            document.getElementById("newothermediumscontainer").children[3].style.opacity="100";
            document.getElementById("newothermediumscontainer").children[4].style.opacity="100";
            document.getElementById("newothermediumscontainer").children[5].style.opacity="100";
+           document.getElementById("newothermediumscontainer").children[6].style.opacity="100";
            }, 0);
            
            if (photo===true){
@@ -590,7 +601,18 @@
       <style>
         @media only screen and (max-width: 600px) {
         #om4{
-          background-position: center 55%!important;
+          background-position: center 19%!important;
+        }
+
+        #om2{
+          object-position: 0 23%!important;
+        }
+
+        #om1{
+          object-position: 0 58%!important;
+        }
+        #om3{
+          background-position: 0px 15%!important;
         }
         }
         </style>
@@ -637,7 +659,7 @@
       </div>
       <div class="othermediumsdiv">
         <a href="fashion2020.html">
-        <img id="om5" class="othermediumsimage" src="https://cdn.glitch.com/4ead142d-246b-4550-8218-d7130a244dd5%2Fnewfashion%20(9).webp?v=1609176843022">
+        <img id="om6" class="othermediumsimage" src="https://cdn.glitch.com/4ead142d-246b-4550-8218-d7130a244dd5%2Fnewfashion%20(9).webp?v=1609176843022">
         <div class="othermediumslabel">
         Fashion 2020
         </div>
