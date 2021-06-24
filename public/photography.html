@@ -334,7 +334,7 @@
          } else {
            photo = true;
          document.getElementById("newphotocontainer").style.display="block"
-           document.getElementById("newphotocontainer").style.maxHeight="300px"
+           document.getElementById("newphotocontainer").style.maxHeight="400px"
            document.getElementById("photographyarrow").style.clipPath = "polygon(20% 90%, 0 90%, 50% 15%, 100% 90%, 80% 90%, 50% 45%)"
             document.getElementById("newphotoparent").style.marginBottom="40px"
            
@@ -351,23 +351,11 @@
               document.getElementById("newmediumscontainer").style.marginBottom=""
               document.getElementById("newothermediumscontainer").style.maxHeight="0px"
              
-           document.getElementById("newothermediumscontainer").children[0].style.opacity="";
-           document.getElementById("newothermediumscontainer").children[1].style.opacity="";
-           document.getElementById("newothermediumscontainer").children[2].style.opacity="";
-           document.getElementById("newothermediumscontainer").children[3].style.opacity="";
-           document.getElementById("newothermediumscontainer").children[4].style.opacity="";
-           document.getElementById("newothermediumscontainer").children[5].style.opacity="";
-           document.getElementById("newothermediumscontainer").children[6].style.opacity="";
+          Array.from(document.getElementById("newothermediumscontainer").children).forEach(child => child.style.opacity="");
                     
                     setTimeout(function(){ 
                       if (othermediums === false){
-           document.getElementById("newothermediumscontainer").children[0].style.display="none";
-           document.getElementById("newothermediumscontainer").children[1].style.display="none";
-           document.getElementById("newothermediumscontainer").children[2].style.display="none";
-           document.getElementById("newothermediumscontainer").children[3].style.display="none";
-           document.getElementById("newothermediumscontainer").children[4].style.display="none";
-           document.getElementById("newothermediumscontainer").children[5].style.display="none";
-           document.getElementById("newothermediumscontainer").children[6].style.display="none";
+          Array.from(document.getElementById("newothermediumscontainer").children).forEach(child => child.style.display="none");
            } else{}
                       }, 500, othermediums);
            }
