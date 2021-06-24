@@ -161,6 +161,36 @@ module.exports = {
       chunks: ['fashion2020'],
       filename: './public/fashion2020.html'
     }),
+    new HtmlWebpackPlugin({
+      template: './public/missionstatement.html',
+    inject: false,
+    chunks: ['missionstatement'],
+    filename: './public/missionstatement.html'
+  }),
+  new HtmlWebpackPlugin({
+    template: './public/coveteur.html',
+  inject: false,
+  chunks: ['coveteur'],
+  filename: './public/coveteur.html'
+}),
+new HtmlWebpackPlugin({
+  template: './public/miaou.html',
+inject: false,
+chunks: ['miaou'],
+filename: './public/miaou.html'
+}),
+new HtmlWebpackPlugin({
+  template: './public/nylonjapan.html',
+inject: false,
+chunks: ['nylonjapan'],
+filename: './public/nylonjapan.html'
+}),
+new HtmlWebpackPlugin({
+  template: './public/personal2020.html',
+inject: false,
+chunks: ['personal2020'],
+filename: './public/personal2020.html'
+}),
     new MiniCssExtractPlugin({filename: "[name].css"}),
     new BrotliPlugin({
       asset: '[file].br',
