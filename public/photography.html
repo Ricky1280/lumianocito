@@ -325,11 +325,10 @@
            document.getElementById("photographyarrow").style.clipPath = ""
            document.getElementById("newphotoparent").style.marginBottom=""
            document.getElementById("newphotocontainer").style.maxHeight="0px"
+           Array.from(document.getElementById("newphotocontainer").children).forEach(child => child.style.opacity="")
           
-           Array.from(document.getElementById("newphotocontainer").children).forEach(child => child.style.display="")
-           
               setTimeout(function(){ 
-           Array.from(document.getElementById("newphotocontainer").children).forEach(child => child.style.opacity="0")
+            Array.from(document.getElementById("newphotocontainer").children).forEach(child => child.style.display="")
              }, 500);
            
          } else {
