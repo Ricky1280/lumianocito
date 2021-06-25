@@ -287,283 +287,284 @@
     </div>
     
     
-      <script>
+    
+    <script>
       let clicked = false;
-      
-    function displaynewmenu(){
-      
-      if (clicked === true) {
-        document.getElementById("homelink").style.color=""
-        document.getElementById("newmenuitemholder").style.opacity="0";
-        document.body.style.backgroundColor="white";
-        setTimeout(function(){ 
-                document.getElementsByClassName("newmenu")[0].style.height=""
-      document.getElementsByClassName("newmenu")[0].style.width=""
-      document.getElementsByClassName("newmenu")[0].style.margin=""
-      document.getElementsByClassName("newmenu")[0].style.filter=""
-        document.getElementById("displaynewmenuparent").style.marginTop= ""  
-        document.getElementById("displaynewmenuparent").style.marginLeft=""
-        document.getElementById("displaynewmenuparent").style.marginBottom=""
-          
-        document.getElementById("clicktoshow").style.marginLeft=""
-        document.getElementById("clicktoshow").style.marginBottom=""
-          document.getElementById("newmenuitemholder").style.display="none"
-                  
-                  document.getElementById("clicktoshow").style.marginTop= ""  
-                
-        }, 200);
-        
-          document.getElementsByClassName("newmenu")[0].style.mixBlendMode="normal"
-        document.getElementById("clicktoshow").style.clipPath=""
-        document.getElementById("clicktoshow").style.backgroundColor="black"
-        
-                var othermediumsimage = document.getElementsByClassName("othermediumsimage");
-       for(var i = 0; i < othermediumsimage.length; i++) {
-       othermediumsimage[i].style.filter=""
-      }
-
-        document.getElementById("newmenubackground").style.backgroundColor="transparent"
-
-
-      //  var mydivs = document.getElementsByClassName("newmenuitem");
-      //  for(var i = 0; i < mydivs.length; i++) {
-      //  mydivs[i].style.display="none"
-      // }
-        
-        clicked = false;
-      } else {
-        
-        
-      clicked = true;
-      document.getElementById("homelink").style.color="white"
-      document.getElementById("clicktoshow").style.backgroundColor="white"
-      document.body.style.backgroundColor="black";
-      document.getElementById("newmenuitemholder").style.opacity="100";
-      document.getElementsByClassName("newmenu")[0].style.mixBlendMode="lighten"
-      document.getElementsByClassName("newmenu")[0].style.height="100vh"
-      document.getElementsByClassName("newmenu")[0].style.width="100vw"
-      document.getElementsByClassName("newmenu")[0].style.margin="auto"
-      // document.getElementsByClassName("newmenu")[0].style.filter="blur(125px)"
-      document.getElementById("clicktoshow").style.marginLeft= "calc(100vw - 60px)"
-      document.getElementById("clicktoshow").style.marginBottom= "calc(100vh - 30px)"  
-      document.getElementById("clicktoshow").style.marginTop= "30px"  
-      document.getElementById("displaynewmenuparent").style.marginLeft= "calc(100vw - 60px)"
-      document.getElementById("displaynewmenuparent").style.marginBottom= "calc(100vh - 30px)"  
-      document.getElementById("displaynewmenuparent").style.marginTop= "30px" 
-              document.getElementById("newmenuitemholder").style.display="flex"
-        document.getElementById("newmenubackground").style.backgroundColor="black"
-        document.getElementById("clicktoshow").style.clipPath="url(#my-clip-pathx)"
        
-        var othermediumsimage = document.getElementsByClassName("othermediumsimage");
-       for(var i = 0; i < othermediumsimage.length; i++) {
-       othermediumsimage[i].style.filter="brightness(0.7)"
-      }
+     function displaynewmenu(){
+       
+       if (clicked === true) {
+         document.getElementById("homelink").style.color=""
+         document.getElementById("newmenuitemholder").style.opacity="0";
+         document.body.style.backgroundColor="white";
+ 
+         setTimeout(function(){ 
+           document.getElementsByClassName("newmenu")[0].style.height=""
+           document.getElementsByClassName("newmenu")[0].style.width=""
+           document.getElementsByClassName("newmenu")[0].style.margin=""
+           document.getElementsByClassName("newmenu")[0].style.filter=""
+           document.getElementById("displaynewmenuparent").style.marginTop= ""  
+           document.getElementById("displaynewmenuparent").style.marginLeft=""
+           document.getElementById("displaynewmenuparent").style.marginBottom=""
+               
+           document.getElementById("clicktoshow").style.marginLeft=""
+           document.getElementById("clicktoshow").style.marginBottom=""
+           document.getElementById("newmenuitemholder").style.display="none"
+                       
+           document.getElementById("clicktoshow").style.marginTop= ""  
+                 
+         }, 200);
+         
+           document.getElementsByClassName("newmenu")[0].style.mixBlendMode="normal"
+         document.getElementById("clicktoshow").style.clipPath=""
+         document.getElementById("clicktoshow").style.backgroundColor="black"
+         
+                 var othermediumsimage = document.getElementsByClassName("othermediumsimage");
+        for(var i = 0; i < othermediumsimage.length; i++) {
+        othermediumsimage[i].style.filter=""
+       }
+ 
+         document.getElementById("newmenubackground").style.backgroundColor="transparent"
+ 
+ 
+       //  var mydivs = document.getElementsByClassName("newmenuitem");
+       //  for(var i = 0; i < mydivs.length; i++) {
+       //  mydivs[i].style.display="none"
+       // }
+         
+         clicked = false;
+       } else {
+         
+         
+       clicked = true;
+       document.getElementById("homelink").style.color="white"
+       document.getElementById("clicktoshow").style.backgroundColor="white"
+       document.body.style.backgroundColor="black";
+       document.getElementById("newmenuitemholder").style.opacity="100";
+       document.getElementsByClassName("newmenu")[0].style.mixBlendMode="lighten"
+       document.getElementsByClassName("newmenu")[0].style.height="100vh"
+       document.getElementsByClassName("newmenu")[0].style.width="100vw"
+       document.getElementsByClassName("newmenu")[0].style.margin="auto"
+       // document.getElementsByClassName("newmenu")[0].style.filter="blur(125px)"
+       document.getElementById("clicktoshow").style.marginLeft= "calc(100vw - 60px)"
+       document.getElementById("clicktoshow").style.marginBottom= "calc(100vh - 30px)"  
+       document.getElementById("clicktoshow").style.marginTop= "30px"  
+       document.getElementById("displaynewmenuparent").style.marginLeft= "calc(100vw - 60px)"
+       document.getElementById("displaynewmenuparent").style.marginBottom= "calc(100vh - 30px)"  
+       document.getElementById("displaynewmenuparent").style.marginTop= "30px" 
+       document.getElementById("newmenuitemholder").style.display="flex"
+       document.getElementById("newmenubackground").style.backgroundColor="black"
+       document.getElementById("clicktoshow").style.clipPath="url(#my-clip-pathx)"
         
-        
-      }
-      
-    }
-       let photo = false;
-       function displayphoto(){
-         if (photo===true){
+         var othermediumsimage = document.getElementsByClassName("othermediumsimage");
+        for(var i = 0; i < othermediumsimage.length; i++) {
+        othermediumsimage[i].style.filter="brightness(0.7)"
+       }
+         
+         
+       }
+       
+     }
+        let photo = false;
+        function displayphoto(){
+          if (photo===true){
+            photo = false;
+            document.getElementById("newphotocontainer").style.display=""
+            document.getElementById("photographyarrow").style.clipPath = ""
+            document.getElementById("newphotoparent").style.marginBottom=""
+            document.getElementById("newphotocontainer").style.maxHeight="0px"
+           
+ 
+            Array.from(document.getElementById("newphotocontainer").children).forEach(child => child.style.opacity="0");
+            // document.getElementById("newphotocontainer").children[3].style.opacity="0";
+            
+             setTimeout(function(){ 
+               Array.from(document.getElementById("newphotocontainer").children).forEach(child => child.style.display="none");
+            // document.getElementById("newphotocontainer").children[3].style.display="none";
+              }, 500);
+            
+          } else {
+            photo = true;
+          document.getElementById("newphotocontainer").style.display="block"
+            document.getElementById("newphotocontainer").style.maxHeight="300px"
+            document.getElementById("photographyarrow").style.clipPath = "polygon(20% 90%, 0 90%, 50% 15%, 100% 90%, 80% 90%, 50% 45%)"
+             document.getElementById("newphotoparent").style.marginBottom="40px"
+            
+             Array.from(document.getElementById("newphotocontainer").children).forEach(child => child.style.display="block");
+            // document.getElementById("newphotocontainer").children[3].style.display="block";
+            
+               setTimeout(function(){ 
+                 Array.from(document.getElementById("newphotocontainer").children).forEach(child => child.style.opacity="100");
+            // document.getElementById("newphotocontainer").children[3].style.opacity="100";
+            }, 0);
+            
+            if (othermediums === true){
+               othermediums = false;
+               document.getElementById("newothermediumscontainer").style.display=""
+               document.getElementById("othermediumsarrow").style.clipPath = ""
+               document.getElementById("newmediumscontainer").style.marginBottom=""
+               document.getElementById("newothermediumscontainer").style.maxHeight="0px"
+              
+            Array.from(document.getElementById("newothermediumscontainer").children).forEach(child => child.style.opacity="");
+ 
+                     
+                     setTimeout(function(){ 
+                       if (othermediums === false){
+                       Array.from(document.getElementById("newothermediumscontainer").children).forEach(child => child.style.display="none");
+           } else{}
+                       }, 500, othermediums);
+            }
+            
+                     if (pastprojects===true){
+            pastprojects = false;
+            document.getElementById("newpastprojectscontainer").style.display=""
+            document.getElementById("pastprojectsarrow").style.clipPath = ""
+            document.getElementById("pastprojectsparent").style.marginBottom=""
+            document.getElementById("newpastprojectscontainer").style.maxHeight="0px"
+           
+            Array.from(document.getElementById("newpastprojectscontainer").children).forEach(child => child.style.opacity="0");
+ 
+            
+             setTimeout(function(){ 
+               Array.from(document.getElementById("newpastprojectscontainer").children).forEach(child => child.style.display="none");
+              }, 500);
+            
+          }
+            
+          }
+        }
+       
+        let othermediums = false;
+        function displaynewmediums(){
+           if (othermediums===true){
+            othermediums = false;
+            document.getElementById("newothermediumscontainer").style.display=""
+             document.getElementById("othermediumsarrow").style.clipPath = ""
+             document.getElementById("newmediumscontainer").style.marginBottom=""
+             document.getElementById("newothermediumscontainer").style.maxHeight="0px"
+       
+             Array.from(document.getElementById("newothermediumscontainer").children).forEach(child => child.style.opacity="");
+             
+             setTimeout(function(){ 
+               Array.from(document.getElementById("newothermediumscontainer").children).forEach(child => child.style.display = "none");
+             }, 500);
+     
+          } else {
+            othermediums = true;
+            document.getElementById("newothermediumscontainer").style.display="block"
+            document.getElementById("newothermediumscontainer").style.maxHeight="300px"
+            document.getElementById("othermediumsarrow").style.clipPath = "polygon(20% 90%, 0 90%, 50% 15%, 100% 90%, 80% 90%, 50% 45%)"
+            document.getElementById("newmediumscontainer").style.marginBottom="40px"
+            
+            Array.from(document.getElementById("newothermediumscontainer").children).forEach(child => child.style.display="block");
+            
+             setTimeout(function(){ 
+               Array.from(document.getElementById("newothermediumscontainer").children).forEach(child => child.style.opacity="100");
+            }, 0);
+            
+            if (photo===true){
+            photo = false;
+            document.getElementById("newphotocontainer").style.display=""
+            document.getElementById("photographyarrow").style.clipPath = ""
+            document.getElementById("newphotoparent").style.marginBottom=""
+            document.getElementById("newphotocontainer").style.maxHeight="0px"
+              
+            Array.from(document.getElementById("newphotocontainer").children).forEach(child => child.style.opacity="0");
+            // document.getElementById("newphotocontainer").children[3].style.opacity="0";
+            
+           setTimeout(function(){ 
+               Array.from(document.getElementById("newphotocontainer").children).forEach(child => child.style.display="none");
+            // document.getElementById("newphotocontainer").children[3].style.display="none";
+              }, 500);
+            
+          }
+             if (pastprojects===true){
+            pastprojects = false;
+            document.getElementById("newpastprojectscontainer").style.display=""
+            document.getElementById("pastprojectsarrow").style.clipPath = ""
+            document.getElementById("pastprojectsparent").style.marginBottom=""
+            document.getElementById("newpastprojectscontainer").style.maxHeight="0px"
+           
+            Array.from(document.getElementById("newpastprojectscontainer").children).forEach(child => child.style.opacity="0");
+            
+             setTimeout(function(){ 
+               Array.from(document.getElementById("newpastprojectscontainer").children).forEach(child => child.style.display="none");
+              }, 500);
+            
+          }
+          }
+        }
+         
+      let pastprojects = false;
+        function displaypastprojects(){
+          if (pastprojects===true){
+            pastprojects = false;
+            document.getElementById("newpastprojectscontainer").style.display=""
+            document.getElementById("pastprojectsarrow").style.clipPath = ""
+            document.getElementById("pastprojectsparent").style.marginBottom=""
+            document.getElementById("newpastprojectscontainer").style.maxHeight="0px"
+           
+            Array.from(document.getElementById("newpastprojectscontainer").children).forEach(child => child.style.opacity="0");
+            
+             setTimeout(function(){ 
+               Array.from(document.getElementById("newpastprojectscontainer").children).forEach(child => child.style.display="none");
+              }, 500);
+            
+          } else {
+           pastprojects = true;
+           document.getElementById("newpastprojectscontainer").style.display="block"
+           document.getElementById("newpastprojectscontainer").style.maxHeight="300px"
+           document.getElementById("pastprojectsarrow").style.clipPath = "polygon(20% 90%, 0 90%, 50% 15%, 100% 90%, 80% 90%, 50% 45%)"
+           document.getElementById("pastprojectsparent").style.marginBottom="40px"
+           
+           Array.from(document.getElementById("newpastprojectscontainer").children).forEach(child => child.style.display="block");
+            
+           setTimeout(function(){ 
+             Array.from(document.getElementById("newpastprojectscontainer").children).forEach(child => child.style.opacity="100");
+           }, 0);
+            
+            
+            
+            if (othermediums === true){
+               othermediums = false;
+               document.getElementById("newothermediumscontainer").style.display=""
+               document.getElementById("othermediumsarrow").style.clipPath = ""
+               document.getElementById("newmediumscontainer").style.marginBottom=""
+               document.getElementById("newothermediumscontainer").style.maxHeight="0px"
+ 
+             Array.from(document.getElementById("newothermediumscontainer").children).forEach(child => child.style.opacity="");
+ 
+             setTimeout(function(){ 
+               if (othermediums === false){
+               Array.from(document.getElementById("newothermediumscontainer").children).forEach(child => child.style.display="none");
+             } else{}
+             }, 500, othermediums);
+ 
+            }
+            
+            if (photo===true){
            photo = false;
            document.getElementById("newphotocontainer").style.display=""
            document.getElementById("photographyarrow").style.clipPath = ""
            document.getElementById("newphotoparent").style.marginBottom=""
            document.getElementById("newphotocontainer").style.maxHeight="0px"
-          
-
-           Array.from(document.getElementById("newphotocontainer").children).forEach(child => child.style.opacity="0");
-           // document.getElementById("newphotocontainer").children[3].style.opacity="0";
-           
-            setTimeout(function(){ 
-              Array.from(document.getElementById("newphotocontainer").children).forEach(child => child.style.display="none");
-           // document.getElementById("newphotocontainer").children[3].style.display="none";
-             }, 500);
-           
-         } else {
-           photo = true;
-         document.getElementById("newphotocontainer").style.display="block"
-           document.getElementById("newphotocontainer").style.maxHeight="300px"
-           document.getElementById("photographyarrow").style.clipPath = "polygon(20% 90%, 0 90%, 50% 15%, 100% 90%, 80% 90%, 50% 45%)"
-            document.getElementById("newphotoparent").style.marginBottom="40px"
-           
-            Array.from(document.getElementById("newphotocontainer").children).forEach(child => child.style.display="block");
-           // document.getElementById("newphotocontainer").children[3].style.display="block";
-           
-              setTimeout(function(){ 
-                Array.from(document.getElementById("newphotocontainer").children).forEach(child => child.style.opacity="100");
-           // document.getElementById("newphotocontainer").children[3].style.opacity="100";
-           }, 0);
-           
-           if (othermediums === true){
-              othermediums = false;
-              document.getElementById("newothermediumscontainer").style.display=""
-              document.getElementById("othermediumsarrow").style.clipPath = ""
-              document.getElementById("newmediumscontainer").style.marginBottom=""
-              document.getElementById("newothermediumscontainer").style.maxHeight="0px"
-             
-           Array.from(document.getElementById("newothermediumscontainer").children).forEach(child => child.style.opacity="");
-
-                    
-                    setTimeout(function(){ 
-                      if (othermediums === false){
-                      Array.from(document.getElementById("newothermediumscontainer").children).forEach(child => child.style.display="none");
-          } else{}
-                      }, 500, othermediums);
-           }
-           
-                    if (pastprojects===true){
-           pastprojects = false;
-           document.getElementById("newpastprojectscontainer").style.display=""
-           document.getElementById("pastprojectsarrow").style.clipPath = ""
-           document.getElementById("pastprojectsparent").style.marginBottom=""
-           document.getElementById("newpastprojectscontainer").style.maxHeight="0px"
-          
-           Array.from(document.getElementById("newpastprojectscontainer").children).forEach(child => child.style.opacity="0");
-
-           
-            setTimeout(function(){ 
-              Array.from(document.getElementById("newpastprojectscontainer").children).forEach(child => child.style.display="none");
-             }, 500);
-           
-         }
-           
-         }
-       }
-      
-       let othermediums = false;
-       function displaynewmediums(){
-                  if (othermediums===true){
-           othermediums = false;
-           document.getElementById("newothermediumscontainer").style.display=""
-                    document.getElementById("othermediumsarrow").style.clipPath = ""
-                    document.getElementById("newmediumscontainer").style.marginBottom=""
-                    document.getElementById("newothermediumscontainer").style.maxHeight="0px"
               
-                    
-                    Array.from(document.getElementById("newothermediumscontainer").children).forEach(child => child.style.opacity="");
-                    
-                    setTimeout(function(){ 
-                      Array.from(document.getElementById("newothermediumscontainer").children).forEach(child => child.style.display = "none");
-                      }, 500);
-           
-         } else {
-           othermediums = true;
-           document.getElementById("newothermediumscontainer").style.display="block"
-           document.getElementById("newothermediumscontainer").style.maxHeight="300px"
-           document.getElementById("othermediumsarrow").style.clipPath = "polygon(20% 90%, 0 90%, 50% 15%, 100% 90%, 80% 90%, 50% 45%)"
-           document.getElementById("newmediumscontainer").style.marginBottom="40px"
-           
-           Array.from(document.getElementById("newothermediumscontainer").children).forEach(child => child.style.display="block");
-           
-            setTimeout(function(){ 
-              Array.from(document.getElementById("newothermediumscontainer").children).forEach(child => child.style.opacity="100");
-           }, 0);
-           
-           if (photo===true){
-           photo = false;
-           document.getElementById("newphotocontainer").style.display=""
-           document.getElementById("photographyarrow").style.clipPath = ""
-           document.getElementById("newphotoparent").style.marginBottom=""
-             document.getElementById("newphotocontainer").style.maxHeight="0px"
-             
-             Array.from(document.getElementById("newphotocontainer").children).forEach(child => child.style.opacity="0");
-           // document.getElementById("newphotocontainer").children[3].style.opacity="0";
-           
-            setTimeout(function(){ 
-              Array.from(document.getElementById("newphotocontainer").children).forEach(child => child.style.display="none");
-           // document.getElementById("newphotocontainer").children[3].style.display="none";
-             }, 500);
-           
-         }
-            if (pastprojects===true){
-           pastprojects = false;
-           document.getElementById("newpastprojectscontainer").style.display=""
-           document.getElementById("pastprojectsarrow").style.clipPath = ""
-           document.getElementById("pastprojectsparent").style.marginBottom=""
-           document.getElementById("newpastprojectscontainer").style.maxHeight="0px"
+              Array.from(document.getElementById("newphotocontainer").children).forEach(child => child.style.opacity="0");
+            // document.getElementById("newphotocontainer").children[3].style.opacity="0";
+            
+             setTimeout(function(){ 
+               Array.from(document.getElementById("newphotocontainer").children).forEach(child => child.style.display="none");
+            // document.getElementById("newphotocontainer").children[3].style.display="none";
+              }, 500);
+            
+          }
+            
+          }
+        }
           
-           Array.from(document.getElementById("newpastprojectscontainer").children).forEach(child => child.style.opacity="0");
-           
-            setTimeout(function(){ 
-              Array.from(document.getElementById("newpastprojectscontainer").children).forEach(child => child.style.display="none");
-             }, 500);
-           
-         }
-         }
-       }
         
-     let pastprojects = false;
-       function displaypastprojects(){
-         if (pastprojects===true){
-           pastprojects = false;
-           document.getElementById("newpastprojectscontainer").style.display=""
-           document.getElementById("pastprojectsarrow").style.clipPath = ""
-           document.getElementById("pastprojectsparent").style.marginBottom=""
-           document.getElementById("newpastprojectscontainer").style.maxHeight="0px"
-          
-           Array.from(document.getElementById("newpastprojectscontainer").children).forEach(child => child.style.opacity="0");
-           
-            setTimeout(function(){ 
-              Array.from(document.getElementById("newpastprojectscontainer").children).forEach(child => child.style.display="none");
-             }, 500);
-           
-         } else {
-           pastprojects = true;
-         document.getElementById("newpastprojectscontainer").style.display="block"
-           document.getElementById("newpastprojectscontainer").style.maxHeight="300px"
-           document.getElementById("pastprojectsarrow").style.clipPath = "polygon(20% 90%, 0 90%, 50% 15%, 100% 90%, 80% 90%, 50% 45%)"
-            document.getElementById("pastprojectsparent").style.marginBottom="40px"
-           
-            Array.from(document.getElementById("newpastprojectscontainer").children).forEach(child => child.style.display="block");
-           
-              setTimeout(function(){ 
-                Array.from(document.getElementById("newpastprojectscontainer").children).forEach(child => child.style.opacity="100");
-           }, 0);
-           
-           
-           
-           if (othermediums === true){
-              othermediums = false;
-              document.getElementById("newothermediumscontainer").style.display=""
-              document.getElementById("othermediumsarrow").style.clipPath = ""
-              document.getElementById("newmediumscontainer").style.marginBottom=""
-              document.getElementById("newothermediumscontainer").style.maxHeight="0px"
-             
-              
-              Array.from(document.getElementById("newothermediumscontainer").children).forEach(child => child.style.opacity="");
-                    
-                    setTimeout(function(){ 
-                      if (othermediums === false){
-                        Array.from(document.getElementById("newothermediumscontainer").children).forEach(child => child.style.display="none");
-          } else{}
-                      }, 500, othermediums);
-           }
-           
-           if (photo===true){
-           photo = false;
-           document.getElementById("newphotocontainer").style.display=""
-           document.getElementById("photographyarrow").style.clipPath = ""
-           document.getElementById("newphotoparent").style.marginBottom=""
-             document.getElementById("newphotocontainer").style.maxHeight="0px"
-             
-             Array.from(document.getElementById("newphotocontainer").children).forEach(child => child.style.opacity="0");
-           // document.getElementById("newphotocontainer").children[3].style.opacity="0";
-           
-            setTimeout(function(){ 
-              Array.from(document.getElementById("newphotocontainer").children).forEach(child => child.style.display="none");
-           // document.getElementById("newphotocontainer").children[3].style.display="none";
-             }, 500);
-           
-         }
-           
-         }
-       }
-         
        
-      
-    </script>
+     </script>
     
     <div class="newmenu">
       
