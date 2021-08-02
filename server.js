@@ -38,9 +38,7 @@ app.use(express.static('public'));
 
 var server_port = process.env.YOUR_PORT || process.env.PORT || 5000;
 var server_host = process.env.YOUR_HOST || '0.0.0.0';
-var listener = app.listen(server_port, server_host, function() {
-    console.log('Listening on port %d', listener.address().port + " " + server_port);
-});
+var listener = app.listen(process.env.PORT || 5000);
 
 // var listener = app.listen(process.env.PORT || 5000, function() {
 //   console.log('Your app is listening on port ' + listener.address().port);
