@@ -7,7 +7,7 @@
   "description": "Lumia's Website",
   "main": "server.js",
   "scripts": {
-    "start": "webpack && node server.js"
+    "start": "node server.js && webpack"
   },
   "dependencies": {
     "express": "^4.16.3",
