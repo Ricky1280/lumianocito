@@ -53,12 +53,6 @@ module.exports = {
       filename: './public/exhibitions.html'
     }),
           new HtmlWebpackPlugin({
-            template: './public/exhibitions_old.html',
-      inject: false,
-      chunks: ['exhibitions_old'],
-      filename: './public/exhibitions_old.html'
-    }),
-          new HtmlWebpackPlugin({
             template: './public/fashion.html',
       inject: false,
       chunks: ['fashion'],
@@ -118,24 +112,17 @@ module.exports = {
       chunks: ['press'],
       filename: './public/press.html'
     }),
+    new HtmlWebpackPlugin({
+      template: './public/amalie-ongoing.html',
+inject: false,
+chunks: ['amalie-ongoing'],
+filename: './public/amalie-ongoing.html'
+}),
           new HtmlWebpackPlugin({
             template: './public/sculpture.html',
       inject: false,
       chunks: ['sculpture'],
       filename: './public/sculpture.html'
-    }),
-      
-          new HtmlWebpackPlugin({
-            template: './public/smallindex.html',
-      inject: false,
-      chunks: ['smallindex'],
-      filename: './public/smallindex.html'
-    }),
-          new HtmlWebpackPlugin({
-            template: './public/tests-for-img.html',
-      inject: false,
-      chunks: ['tests-for-img'],
-      filename: './public/tests-for-img.html'
     }),
           new HtmlWebpackPlugin({
             template: './public/unseen.html',
